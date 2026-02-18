@@ -55,18 +55,24 @@ up with anything else at the time. Sue me.
 
 # Usage
 -----
+Build:
+
+```bash
+go build -o grapevine ./grapevine
+```
+
 Start controller node:
 
 ```bash
-./grapevine -n <node-name> -l 127.0.0.1:4000
+./grapevine -n <node-name> -i 127.0.0.1 -p 4000
 ```
 
 Start follower nodes:
 
 ```bash
-./grapevine -n <node-name> -l 127.0.0.1:4001 -j 127.0.0.1:4000
+./grapevine -n <node-name> -i 127.0.0.1 -p 4001 -j 127.0.0.1:4000
 
-./grapevine -n <node-name> -l 127.0.0.1:4002 -j 127.0.0.1:4000
+./grapevine -n <node-name> -i 127.0.0.1 -p 4002 -j 127.0.0.1:4000
 
 ...
 
@@ -81,4 +87,3 @@ network locally using in-memory nodes, and trigger various events on it.
 
 cmd: r ../test/s0.run # Runs instructions in the "run" file sequentially.
 ```
-
