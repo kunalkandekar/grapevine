@@ -87,3 +87,29 @@ network locally using in-memory nodes, and trigger various events on it.
 
 cmd: r ../test/s0.run # Runs instructions in the "run" file sequentially.
 ```
+
+# Testing
+-----
+Run all tests:
+
+```bash
+go test ./...
+```
+
+Run only smoke tests:
+
+```bash
+go test ./grapevine -run 'TestDoGetAndReadResponse|TestResetDebugFlag' -v
+```
+
+Run the run-file integration test (exercises console `r <script>` path):
+
+```bash
+go test ./grapevine -run TestConsoleRunScriptIntegration -v
+```
+
+Skip integration test (short mode):
+
+```bash
+go test ./... -short
+```
